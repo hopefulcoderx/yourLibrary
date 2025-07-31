@@ -1,0 +1,205 @@
+/* --- CSS Reset & Basic Styling --- */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #007bff;
+    --text-color: #343a40;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: rgb(242, 230, 216); /* Changed page background color */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: rgb(206, 184, 170); /* Navbar base color */
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbar-brand {
+    padding: 5px 0;
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links a {
+    color: #343a40;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 20px 25px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgb(242, 230, 216); /* Hover highlight color matches new page background */
+}
+
+.nav-links li:not(:first-child) {
+    border-left: 1px solid black;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/6c757d/f8f9fa?text=Library+Background');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 0; /* Changed to square */
+    outline: none;
+}
+
+.search-button {
+    padding: 15px 30px;
+    font-size: 1em;
+    background-color: rgb(126, 174, 194); /* Changed button color */
+    color: white;
+    border: none;
+    border-radius: 0; /* Changed to square */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+     background-color: rgb(106, 154, 174); /* Darker shade for hover */
+}
+
+/* --- Featured Books Section --- */
+.featured-section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.book-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.book-cover {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.book-info {
+    padding: 20px;
+}
+
+.book-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.book-author {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .nav-links a {
+        padding: 15px;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+}
