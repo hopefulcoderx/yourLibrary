@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}MyLibrary - Home{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Find Your Next Great Read</h1>
+        <p>Explore our vast collection of books, from timeless classics to modern bestsellers.</p>
+        <form class="search-form" method="GET" action="{{ url_for('index') }}">
+            <input type="text" name="search" class="search-input" placeholder="Search by title, author, or ISBN...">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </section>
+
+
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Books</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="https://placehold.co/400x600/007bff/white?text=Book+Cover" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">The Midnight Library</h3>
+                        <p class="book-author">Matt Haig</p>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="https://placehold.co/400x600/28a745/white?text=Book+Cover" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Dune</h3>
+                        <p class="book-author">Frank Herbert</p>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="https://placehold.co/400x600/dc3545/white?text=Book+Cover" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Project Hail Mary</h3>
+                        <p class="book-author">Andy Weir</p>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <img src="https://placehold.co/400x600/ffc107/black?text=Book+Cover" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Atomic Habits</h3>
+                        <p class="book-author">James Clear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

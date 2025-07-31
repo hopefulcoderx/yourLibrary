@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- The title can be overridden by child templates -->
     <title>{% block title %}MyLibrary{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="{{ url_for('index') }}" class="navbar-brand">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="MyLibrary Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x50/ffffff/343a40?text=Logo.png';">
             </a>
             <ul class="nav-links">
-                <!-- These links should point to your Flask routes -->
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Login</a></li>
@@ -29,12 +25,10 @@
         </div>
     </header>
 
-    <!-- Main content block for child templates -->
     <main>
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 MyLibrary. All Rights Reserved.</p>
